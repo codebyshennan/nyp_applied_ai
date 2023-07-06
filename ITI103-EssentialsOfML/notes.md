@@ -50,17 +50,20 @@ Machine learning is a broad field that encompasses various types of algorithms a
 ### Regression vs Classification types
 
 Regression and classification are two fundamental tasks in supervised learning. Here are the main differences between regression and classification:
+
 Regression:
 
 - Regression is a type of supervised learning that deals with predicting continuous numerical values as output.
 - The goal is to find a mathematical function that best fits the relationship between the input variables (features) and the target variable.
 - Examples of regression problems include predicting housing prices, estimating sales figures, or forecasting stock market trends.
 - Evaluation metrics for regression models include mean squared error (MSE), root mean squared error (RMSE), mean absolute error (MAE), and R-squared.
+
 Classification:
 - Classification is a type of supervised learning that deals with predicting categorical labels or discrete classes as output.
 - The goal is to assign input data points to predefined categories or classes based on their features.
 - Examples of classification problems include email spam detection, image recognition, sentiment analysis, and medical diagnosis.
 - Evaluation metrics for classification models include accuracy, precision, recall, F1-score, and area under the receiver operating characteristic curve (AUC-ROC).
+
 While regression predicts continuous values, classification focuses on discrete labels. The choice between regression and classification depends on the nature of the target variable and the problem at hand. If the target variable represents a quantity or a measurement, regression is appropriate. On the other hand, if the target variable represents a category or a class, classification is suitable.
 
 ### Unsupervised learning: clustering vs association rules (high-level description)
@@ -73,6 +76,7 @@ Unsupervised learning encompasses various techniques, two of which are clusterin
   - Clustering algorithms aim to maximize the similarity within clusters while maximizing the dissimilarity between different clusters.
   - Examples of clustering algorithms include k-means, hierarchical clustering, and DBSCAN.
   - Clustering can be used for customer segmentation, image segmentation, anomaly detection, and recommendation systems.
+
 - Association Rules:
   - Association rule mining is an unsupervised learning technique that discovers interesting relationships or associations among items in a dataset.
   - It focuses on finding patterns or co-occurrences of items that frequently appear together in transactions or events.
@@ -80,6 +84,7 @@ Unsupervised learning encompasses various techniques, two of which are clusterin
   - The rules are evaluated based on metrics such as support, confidence, and lift to measure the strength and significance of the associations.
   - Examples of association rule mining algorithms include Apriori and FP-growth.
   - Association rules are commonly used in market basket analysis, recommendation systems, and finding correlations in large datasets.
+
 While clustering groups similar data points together without any predefined rules, association rules focus on discovering patterns and relationships among items in a dataset. Clustering is useful when you want to identify natural groupings or clusters within data, whereas association rules are beneficial when you want to uncover interesting associations or dependencies between items.
 
 It’s important to note that clustering and association rules are distinct techniques, but they can complement each other in some scenarios. For example, you can use clustering to group similar customers and then apply association rule mining within each cluster to identify specific patterns or associations unique to that cluster.
@@ -110,6 +115,7 @@ Machine learning, despite its significant advancements and applications, also fa
 - Ethical Considerations and Privacy:
   - The use of machine learning raises ethical concerns related to privacy, data security, algorithmic biases, and potential misuse of technology.
   - Developing ethical guidelines, ensuring data privacy, and considering the social impact of machine learning are important challenges to address.
+
 Addressing these challenges requires a combination of technical expertise, rigorous data preprocessing, thoughtful algorithm selection, interpretability techniques, and ethical considerations to build robust and reliable machine learning systems.
 
 ### What is the purpose of train, validation and test set?
@@ -130,6 +136,7 @@ The purpose of train, validation, and test sets is to properly evaluate and vali
   - It serves as an independent dataset that simulates real-world scenarios, helping assess how well the model generalizes to unseen data.
   - The test set should be representative of the data the model is expected to encounter in practice.
   - By evaluating the model on the test set, you can estimate its performance metrics, such as accuracy, precision, recall, or F1-score, and assess its real-world applicability.
+
 It’s important to note that the test set should only be used sparingly, typically after model development is complete, to avoid any biases introduced through repeated testing on the same dataset. Additionally, the size of each set (train, validation, and test) depends on the available data and the specific problem at hand, but commonly used splits are 70% for training, 15% for validation, and 15% for testing.
 
 In Python, you can split your data into train, validation, and test sets using various libraries such as scikit-learn or TensorFlow. Here’s an example using scikit-learn:
@@ -151,6 +158,7 @@ X_train, X_val, y_train, y_val = train_test_split(X_train, y_train, test_size=0.
 In the code snippet above, the `train_test_split()` function from scikit-learn is used twice. First, it splits the original data into a training set (`X_train`, `y_train`) and a test set (`X_test`, `y_test`) using the test_size parameter set to 0.2 (20% of the data for testing). The `random_state` parameter ensures reproducibility by fixing the random seed.
 
 Next, the training set is further split into a new training set (`X_train`, `y_train`) and a validation set (`X_val`, `y_val`) using the same `train_test_split()` function. The test_size parameter is set to 0.25 (25% of the data for validation).
+
 By the end of this process, you will have three separate sets: `X_train` and `y_train` for training, `X_val` and `y_val` for validation, and `X_test` and `y_test` for final testing. These sets can be used for training and evaluating your machine learning models accordingly.
 
 ## Session 3
@@ -162,10 +170,12 @@ Multiple Regression vs Simple Regression:
 - Simple regression involves predicting a dependent variable (target) based on a single independent variable (feature).
 - Multiple regression, on the other hand, deals with predicting the dependent variable based on two or more independent variables.
 - In simple regression, the relationship between the independent and dependent variables is represented by a straight line (in the case of linear regression). In multiple regression, the relationship is represented by a hyperplane or a higher-dimensional surface.
+
 Univariate vs Multivariate Regression:
 - Univariate regression refers to a regression analysis with a single dependent variable and one or more independent variables.
 - Multivariate regression involves analyzing the relationship between multiple dependent variables and two or more independent variables simultaneously.
 - In univariate regression, each dependent variable is analyzed separately, while in multivariate regression, the relationships between the independent and dependent variables are considered collectively.
+
 In summary, simple regression predicts a dependent variable based on a single independent variable, while multiple regression predicts the dependent variable using two or more independent variables. Univariate regression analyzes the relationship between a single dependent variable and multiple independent variables, while multivariate regression analyzes the relationship between multiple dependent variables and multiple independent variables.
 
 ### Performance measures for linear regression? Definition of RMSE/MSE/MAE
@@ -187,6 +197,7 @@ In linear regression, several performance measures are commonly used to evaluate
   - It calculates the mean of the absolute differences, providing a measure of the average magnitude of the errors.
   - MAE is less sensitive to outliers compared to RMSE and MSE since it does not square the differences.
   - MAE is useful when all prediction errors are considered equally important.
+
 All three measures, RMSE, MSE, and MAE, are used to assess the performance of a linear regression model. The choice of which measure to use depends on the specific requirements of the problem, the nature of the data, and the importance assigned to different types of errors.
 
 ### Advantages of using RMSE (sensitive to outliers)
@@ -197,6 +208,7 @@ The advantages of using RMSE, which is sensitive to outliers, include the follow
 - Reflects the overall magnitude of errors: By taking the square root of the average squared differences, RMSE provides a measure of the overall magnitude of the prediction errors. A lower RMSE value indicates that the model’s predictions are, on average, closer to the actual values. This measure is particularly useful when the absolute magnitude of errors is important and needs to be evaluated.
 - Emphasizes larger errors: RMSE gives more weight to larger errors compared to smaller errors due to the squaring operation. This emphasis on larger errors is beneficial in situations where reducing large errors is crucial, such as in safety-critical systems or when the cost of significant errors is high.
 - Aligns with certain optimization algorithms: Some optimization algorithms used in model training, such as those based on gradient descent, tend to perform better when the objective function is differentiable and has a unique global minimum. By squaring the errors, RMSE provides a differentiable objective function that aligns well with these optimization algorithms, making it easier to optimize the model parameters.
+
 However, it’s important to note that the sensitivity of RMSE to outliers can also be a disadvantage in certain scenarios. If outliers are not of particular interest or if their impact should be minimized, alternative measures such as MAE (Mean Absolute Error) might be more suitable. The choice of the appropriate evaluation metric depends on the specific context, goals, and requirements of the problem at hand.
 
 ### Random vs Stratified sampling
@@ -213,8 +225,11 @@ Random sampling and stratified sampling are two commonly used methods for select
   - The purpose is to ensure that each subgroup or stratum is adequately represented in the sample, thus reducing potential biases.
   - Stratified sampling is particularly useful when the population has known subgroups that are of interest, and it is important to capture their characteristics accurately.
   - By selecting samples proportionally from each stratum, stratified sampling can provide more precise estimates for specific subgroups and overall population estimates.
+
 The choice between random sampling and stratified sampling depends on the research objectives, characteristics of the population, and the need for representation of subgroups. If the population is homogeneous, random sampling may be sufficient. However, if the population has distinct subgroups and it is important to have representative samples from each subgroup, stratified sampling is preferred to ensure a more accurate and unbiased representation.
+
 Feature engineering and selection: look for features with high correlation, combining attributes
+
 Feature engineering and feature selection are essential steps in the machine learning pipeline to improve the performance and interpretability of models. Here are explanations of two common techniques used in feature engineering and selection:
 - High Correlation:
   - Correlation analysis helps identify relationships between features and the target variable or between different features themselves.
@@ -226,6 +241,7 @@ Feature engineering and feature selection are essential steps in the machine lea
   - For example, you can create interaction terms by multiplying two or more features together to capture potential interaction effects.
   - Other techniques include combining categorical variables to create new categorical features or aggregating temporal or spatial data to extract meaningful summaries.
   - Feature combination allows the model to capture higher-order relationships or encode domain-specific knowledge into the data representation.
+
 However, it’s important to note that feature engineering and selection should be performed carefully and based on domain knowledge, as indiscriminate selection or combination of features can lead to overfitting or introduce irrelevant information.
 
 Moreover, there are other techniques for feature engineering and selection, such as dimensionality reduction (e.g., Principal Component Analysis, t-SNE), regularization methods (e.g., L1 and L2 regularization), and automated feature selection algorithms (e.g., `Recursive Feature Elimination`, `SelectKBest`). The choice of technique depends on the specific problem, data characteristics, and the underlying assumptions of the models being used.
@@ -250,6 +266,7 @@ Dealing with missing values is an important step in data preprocessing. Here are
   - Advanced techniques, such as multiple imputation or matrix completion methods, can be used for more complex scenarios where missing values are not completely random.
   - Multiple imputation generates multiple imputed datasets using statistical models and combines the results to provide more robust estimates.
   - Matrix completion methods leverage matrix factorization or machine learning algorithms to estimate missing values based on the observed values and underlying patterns.
+
 It’s important to note that the choice of method depends on factors such as the amount and pattern of missingness, the nature of the data, and the specific problem at hand. Prior domain knowledge and understanding the reasons behind the missingness can also guide the selection of appropriate strategies for handling missing values.
 
 ### How to handle categorical and text attributes (features)?
@@ -265,6 +282,7 @@ Handling categorical and text attributes (features) requires appropriate preproc
   - Stemming and Lemmatization: Stemming and lemmatization techniques reduce words to their base or root form to handle variations (e.g., “running” to “run”).
   - Bag-of-Words (BoW): BoW represents text data by counting the frequency of each word in a document. It creates a matrix where each row represents a document, and each column represents a unique word.
   - TF-IDF (Term Frequency-Inverse Document Frequency): TF-IDF calculates a weighting scheme for each word in a document based on its frequency in the document and its rarity across the entire corpus. It helps to capture the importance of words in a document relative to the entire dataset.
+
 It’s important to choose the appropriate technique based on the specific problem, data characteristics, and the requirements of the machine learning model. Additionally, other advanced techniques such as word embeddings (e.g., `Word2Vec`, `GloVe`) or deep learning models (e.g., recurrent neural networks, transformers) can be used for more complex text processing tasks where capturing semantic relationships is crucial.
 
 ### What are some ways to do feature scaling?
@@ -289,6 +307,7 @@ Feature scaling is an important preprocessing step in machine learning to ensure
 - Scaling to Unit Vector (Vector normalization):
   - Scaling to a unit vector, also known as vector normalization, scales the feature values to have a unit norm or length.
   - Each sample’s feature vector is divided by its Euclidean norm, resulting in a vector with a length of 1.
+
 The choice of feature scaling technique depends on the characteristics of the data and the requirements of the machine learning algorithm. It’s important to note that feature scaling should be applied separately to the training and test sets, using the statistics (e.g., mean, standard deviation) calculated from the training set to avoid data leakage and maintain consistency.
 
 ### What are some ways to do hyperparameter tuning?
@@ -340,6 +359,7 @@ The sigmoid function is also used as an activation function in certain types of 
 In multiclass classification using the One-vs-All (OVA) strategy, also known as One-vs-Rest (OVR), a separate binary classifier is trained for each class against the rest of the classes. The number of classifiers trained is equal to the number of classes in the dataset.
 
 For example, if there are 5 classes in the dataset, the OVA strategy would involve training 5 binary classifiers. Each classifier is trained to distinguish one class from the remaining classes. During inference, the class with the highest confidence or probability output from the classifiers is assigned as the predicted class.
+
 Training multiple binary classifiers in an OVA strategy allows multiclass problems to be transformed into a set of binary classification problems. It simplifies the task by breaking it down into multiple independent binary decisions, reducing the complexity compared to directly training a single multiclass classifier.
 
 ### Cost function of logistic regression
@@ -354,7 +374,9 @@ where:
 The cost function has two terms, one for each possible outcome:
 - When y = 1, the first term `(-y * log(h(x)))` measures the cost if the true label is positive.
 - When y = 0, the second term `(-(1 - y) * log(1 - h(x)))` measures the cost if the true label is negative.
+
 The objective during training is to minimize the average cost or loss across all training examples by adjusting the model’s parameters (weights and biases) using optimization algorithms like gradient descent.
+
 It’s worth noting that the cost function for logistic regression is specific to binary classification. For multiclass classification, other cost functions such as the cross-entropy loss with softmax activation are typically used.
 
 ### Definition and calculations of different classification metrics for binary classification: Accuracy / precision / recall(sensitivity) / specificity /F1
@@ -381,6 +403,7 @@ Binary classification metrics provide measures of performance for models predict
   - The F1-score is the harmonic mean of precision and recall. It provides a single metric that balances both precision and recall.
   - It is useful when both false positives and false negatives are equally important.
   - F1-Score = 2 *(Precision* Recall) / (Precision + Recall)
+
 These classification metrics provide different insights into the model’s performance. Accuracy gives an overall measure of correct predictions, while precision and recall focus on positive instances. Specificity emphasizes correct identification of negative instances. The F1-score combines precision and recall into a single value that considers both false positives and false negatives.
 
 ### Interpreting ROC curve and the use of AUC
@@ -404,6 +427,7 @@ The AUC is often used as a measure of model performance in binary classification
 - It provides a threshold-independent evaluation and can help compare models across different classification scenarios.
 - AUC is sensitive to the model’s ability to rank instances correctly, regardless of the specific threshold chosen.
 - It does not provide insights into the optimal threshold or the specific balance between TPR and FPR that may be desirable for a particular application.
+
 When interpreting the ROC curve and AUC, it’s important to consider the specific problem, cost considerations of false positives and false negatives, and any additional requirements or constraints of the task at hand.
 
 ### Precision/Recall trade-off (how adjusting threshold affect precision/recall)
@@ -421,6 +445,7 @@ Adjusting the classification threshold in a binary classification model has a di
   - Conversely, if the threshold is raised, fewer instances are predicted as positive, only those with higher scores.
   - This leads to a decrease in the number of false positives (FP) but may also result in more false negatives (FN).
   - Precision tends to increase since there are fewer false positives, but recall may decrease due to the increase in false negatives.
+
 In summary, lowering the threshold increases recall (more true positives) at the expense of precision (more false positives), while raising the threshold increases precision (fewer false positives) at the expense of recall (more false negatives).
 
 The choice of the threshold depends on the specific requirements of the problem. If the cost of false positives is high (e.g., in medical diagnosis), a higher threshold may be chosen to prioritize precision. Conversely, if the cost of false negatives is high (e.g., in fraud detection), a lower threshold may be preferred to prioritize recall. Understanding the trade-off between precision and recall and selecting an appropriate threshold is crucial to align the model’s performance with the desired objectives of the task.
@@ -454,6 +479,7 @@ Let’s consider a binary classification scenario:
 - False Positive Rate (FPR):
   - FPR measures the proportion of instances incorrectly predicted as positive out of all actual negative instances.
   - FPR = `FP` / (`FP` + `TN`)
+
 These metrics provide insights into different aspects of the model’s performance. Accuracy represents overall correctness, precision focuses on positive predictions’ correctness, recall emphasizes capturing positive instances, specificity highlights the model’s ability to correctly identify negative instances, and the F1-score balances precision and recall.
 
 Interpreting the confusion matrix and calculating these metrics helps in assessing the model’s strengths, weaknesses, and overall effectiveness in the specific classification task.
@@ -525,6 +551,7 @@ Analyzing the relationship between training and validation errors helps identify
 ### What are some ways to reduce bias and variance?
 
 Reducing bias and variance is essential to achieve a well-performing model. Here are some ways to address bias and variance:
+
 Reducing Bias:
 
 - Increasing Model Complexity:
@@ -536,6 +563,7 @@ Reducing Bias:
 - Reducing Regularization:
   - Regularization techniques, such as L1 and L2 regularization, can be used to reduce overfitting but may introduce some bias.
   - Reducing the strength of regularization or using a more flexible regularization parameter can help reduce bias.
+
 Reducing Variance:
 - Increasing Training Data:
   - Insufficient training data can lead to overfitting and high variance. Increasing the size of the training set can help reduce variance by providing more diverse examples for the model to learn from.
@@ -571,6 +599,7 @@ Error analysis is a valuable technique in machine learning for understanding and
 - Model Fairness and Bias Detection:
   - Error analysis can help identify biases or fairness issues in the model’s predictions.
   - By examining errors across different demographic groups or sensitive attributes, it allows for the detection and mitigation of potential biases.
+
 Error analysis, combined with domain expertise, helps practitioners gain a deeper understanding of the model’s behavior, identify areas for improvement, and make informed decisions about further iterations or adjustments to enhance the model’s performance and reliability.
 
 ### Interpreting learning curves
@@ -592,6 +621,7 @@ Learning curves are graphical representations that depict the performance of a m
 - Convergence:
   - Learning curves show the convergence behavior of the model as the amount of data or iterations increases.
   - The convergence occurs when the model’s performance on the validation set plateaus or reaches a stable state, indicating that adding more data or iterations does not significantly improve the model’s performance.
+
 Interpreting learning curves helps in understanding how the model’s performance evolves with more data or iterations, identifying underfitting or overfitting issues, and determining whether further efforts should focus on acquiring more data, adjusting the model’s complexity, or exploring different training strategies to achieve better performance.
 
 ## Session 6
@@ -622,6 +652,7 @@ Common regularization techniques include L1 regularization (Lasso), L2 regulariz
 ### L1 vs L2 regularization
 
 L1 (Lasso) and L2 (Ridge) regularization are two commonly used regularization techniques in machine learning. They introduce penalties to the model’s objective function to control the complexity of the model and prevent overfitting. Here’s a comparison of L1 and L2 regularization:
+
 L1 Regularization (Lasso):
 
 - Penalty Term:
@@ -636,6 +667,7 @@ L1 Regularization (Lasso):
 - Robustness to Outliers:
   - L1 regularization is less robust to outliers since it can be overly sensitive to extreme values.
   - Outliers can have a strong impact on the coefficients, potentially leading to less stable or less reliable models.
+
 L2 Regularization (Ridge):
 - Penalty Term:
   - L2 regularization adds the squared sum of the coefficients (L2 norm) to the objective function.
@@ -649,6 +681,7 @@ L2 Regularization (Ridge):
 - Robustness to Outliers:
   - L2 regularization is more robust to outliers compared to L1 regularization.
   - The squared term in the penalty function softens the impact of extreme values, making the model less sensitive to outliers.
+
 Choosing Between L1 and L2 Regularization:
 - If feature selection is desired or if there are many irrelevant features, L1 regularization (Lasso) is a suitable choice.
 - If the focus is on shrinking the coefficients while keeping all features in the model, or if the data contains outliers, L2 regularization (Ridge) is a better option.
@@ -671,6 +704,7 @@ L1 regularization, also known as Lasso regularization, is generally preferred fo
   - L1 regularization can also rank features based on their importance or contribution to the model’s predictions.
   - Features with non-zero coefficients in the L1 regularized model are considered more important or influential.
   - This ranking can provide insights into the relative significance of different features in the modeling task.
+
 It’s important to note that the choice between L1 regularization (Lasso) and other regularization techniques like L2 regularization (Ridge) depends on the specific requirements of the problem. L1 regularization is particularly suitable for scenarios where feature selection is a priority and there is a need to identify and eliminate irrelevant or less important features. However, if the focus is more on coefficient shrinkage without complete elimination of features, L2 regularization may be preferred. Additionally, the Elastic Net regularization technique combines L1 and L2 regularization, providing a flexible approach that balances feature selection and coefficient shrinkage.
 
 ### Why is feature selection important?
@@ -698,6 +732,7 @@ Feature selection plays a crucial role in machine learning and data analysis. He
 - Reducing Overfitting:
   - Including irrelevant or redundant features can lead to overfitting, where the model memorizes noise or specific instances instead of learning generalizable patterns.
   - Feature selection helps mitigate overfitting by removing irrelevant or redundant features, allowing the model to focus on the most meaningful relationships in the data.
+
 Overall, feature selection is important for improving model performance, reducing dimensionality, enhancing interpretability, increasing computational efficiency, and mitigating overfitting. It helps in building more accurate, efficient, and interpretable models while ensuring the utilization of the most relevant information from the available features.
 
 ### What is early stopping useful for? (to prevent overfitting)
@@ -743,6 +778,7 @@ Batch Gradient Descent, Stochastic Gradient Descent, and Mini-batch Gradient Des
   - The gradients are computed and averaged over each mini-batch, and the model’s parameters are updated accordingly.
   - Mini-batch GD strikes a balance between computational efficiency and convergence stability.
   - It can leverage parallelism in hardware and can be efficiently implemented using vectorized operations on modern GPUs.
+
 Selection between these gradient descent variants depends on various factors:
 - Batch GD is suitable for small datasets or when computational resources are not a constraint.
 - Stochastic GD is useful for large datasets, online learning, and scenarios where frequent updates are desired.
@@ -769,6 +805,7 @@ Feature scaling is beneficial for Stochastic Gradient Descent (SGD) and other op
   - Feature scaling can improve the effectiveness of regularization techniques, such as L1 or L2 regularization, in SGD.
   - When features have different scales, the regularization penalties may have a disproportionate effect on the parameters associated with the features with larger scales.
   - Scaling the features ensures that the regularization penalties are evenly applied to all features, promoting fair regularization and preventing bias towards specific features.
+
 Overall, feature scaling in SGD promotes faster convergence, balanced gradient updates, numerical stability, and enhances the effectiveness of regularization. It helps create a more favorable optimization landscape, enabling SGD to find better solutions efficiently. Common feature scaling techniques include standardization (mean subtraction and division by standard deviation) or normalization (scaling features to a specified range, such as [0, 1]).
 
 ### What is the effect of the learning rate parameter? If too high, the gradient descent may oscillate and never converge, if too low, it will take too long to train
@@ -788,7 +825,8 @@ The learning rate parameter in gradient descent determines the step size at each
 - Appropriate Learning Rate:
   - Selecting an appropriate learning rate is crucial for efficient and effective gradient descent.
   - A well-chosen learning rate ensures stable convergence towards the optimal solution without overshooting or taking too long to train.
-  - Learning rate tuning is often performed through hyperparameter optimization techniques, such as grid search or adaptive learning rate algorithms (e.g., AdaGrad, Adam).
+  - Learning rate tuning is often performed through hyperparameter optimization techniques, such as grid search or adaptive learning rate algorithms (e.g., `AdaGrad`, `Adam`).
+
 Finding the right learning rate is often an empirical process and depends on various factors such as the problem, dataset, and model architecture. Techniques like learning rate schedules or adaptive learning rate algorithms can be used to adjust the learning rate dynamically during training. It’s important to strike a balance between convergence speed and stability to ensure efficient and effective optimization.
 
 ## Session 7
@@ -818,6 +856,7 @@ Dealing with imbalanced datasets is a common challenge in machine learning, wher
 - Evaluation Metrics:
   - Traditional accuracy is not a suitable metric for imbalanced datasets, as it can be misleading due to the class distribution.
   - Metrics like Precision, Recall, F1-Score, Area Under the ROC Curve (AUC-ROC), or Area Under the Precision-Recall Curve (AUC-PR) are more appropriate for assessing model performance on imbalanced data.
+
 The choice of technique depends on the specific characteristics of the dataset and the problem at hand. It is recommended to combine multiple techniques, experiment with different approaches, and evaluate their impact on the model’s performance to find the most effective solution for addressing the imbalance.
 
 ### The different metrics used to evaluate the model performance on imbalanced dataset
@@ -852,4 +891,5 @@ When evaluating model performance on imbalanced datasets, traditional accuracy a
   - The Precision-Recall (PR) curve plots precision against recall at different classification thresholds.
   - AUC-PR represents the area under the PR curve and provides a comprehensive measure of the model’s performance, particularly in cases with imbalanced datasets.
   - AUC-PR ranges between 0 and 1, where higher values indicate better performance.
+
 These metrics provide a more nuanced evaluation of model performance on imbalanced datasets, taking into account both the positive and negative classes. Depending on the problem and the desired focus (e.g., minimizing false positives, detecting rare events), different metrics may be more relevant. It’s important to consider multiple evaluation metrics to gain a comprehensive understanding of the model’s performance on imbalanced data.
